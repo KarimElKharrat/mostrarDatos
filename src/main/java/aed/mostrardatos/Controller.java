@@ -115,7 +115,7 @@ public class Controller implements Initializable {
     @FXML
     void onAnteriorAction(ActionEvent event) {
     	try {
-			if(codHotel != null && !resultado.isFirst() && resultado.previous()) {
+			if(resultado.previous()) {
 				nombre.set(resultado.getString("nombre"));
 				fechaI.set(resultado.getDate("fechaInicio").toString());
 				fechaF.set(resultado.getDate("fechaFin").toString());
@@ -129,7 +129,7 @@ public class Controller implements Initializable {
     @FXML
     void onPosteriorAction(ActionEvent event) throws SQLException {
     	try {
-	    	if(codHotel != null && !resultado.isLast() && resultado.next()) {
+	    	if(resultado.next()) {
 		    	nombre.set(resultado.getString("nombre"));
 		    	fechaI.set(resultado.getDate("fechaInicio").toString());
 		    	fechaF.set(resultado.getDate("fechaFin").toString());
@@ -169,6 +169,7 @@ public class Controller implements Initializable {
     		cantBefore.set(true);
     	else
     		cantBefore.set(false);
+    	
     }
     
     public GridPane getView() {
