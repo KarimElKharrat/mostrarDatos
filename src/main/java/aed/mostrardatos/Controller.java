@@ -169,7 +169,6 @@ public class Controller implements Initializable {
     		cantBefore.set(true);
     	else
     		cantBefore.set(false);
-    	
     }
     
     public GridPane getView() {
@@ -178,7 +177,6 @@ public class Controller implements Initializable {
     
     public void onCloseRequest(Stage stage) {
     	stage.setOnCloseRequest(e -> {
-
     		try {
     			if(conn != null)
     				conn.close();
